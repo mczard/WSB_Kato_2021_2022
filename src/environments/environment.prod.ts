@@ -1,3 +1,4 @@
 export const environment = {
-  production: true
+  production: true,
+  apiUrl: 'https://api.nbp.pl/api/exchangerates/rates/a/'
 };

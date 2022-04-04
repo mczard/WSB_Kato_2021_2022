@@ -1,0 +1,14 @@
+<div>
+  <div *ngIf="errorMessage">
+    {{ errorMessage }}
+  </div>
+  <div>
+    <input [(ngModel)]="userName" placeholder="Login"/>
+  </div>
+  <div>
+    <input [(ngModel)]="password" placeholder="Password" type="password"/>
+  </div>
+  <div>
+    <button (click)="logIn()" >Zaloguj</button>
+  </div>
+</div>

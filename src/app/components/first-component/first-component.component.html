@@ -1,0 +1,37 @@
+<h1 [style.color]="isWrong ? 'red': 'green'">{{ title }}</h1>
+<h2 [ngStyle]="userStyles">{{ user.name }}</h2>
+<div [ngClass]="manyClasses">{{ sayHello() }}</div>
+<div [class.text-success]="isWrong">2 + 5 = {{ 2 + 5 }} </div>
+<div>{{ sayHelloParam('Mateusz') }}</div>
+<!-- <span>{{ data }}</span> Nie działa bo jest nie publiczne -->
+<p>first-component works!</p>
+<input #nameInput [placeholder]="placeholderText" /><button (click)="witaj(nameInput.value)">Przywitaj się</button>
+<p [innerHTML]="newHtmlValue"></p>
+<button (click)="toggle()">Pokaz/Ukryj formularz</button>
+<div *ngIf="show; else formValues">
+  Imie <input [(ngModel)]="person.name" />
+  Nazwisko <input [(ngModel)]="person.surname"/>
+  Zawód <input [ngModel]="person.occupation" (ngModelChange)="onChange($event)"/>
+</div>
+<ng-template #formValues>
+  <div>
+    Podane imię to {{ person.name }} a nazwisko {{ person.surname }}. Twój zawód to {{ person.occupation }}
+  </div>
+</ng-template>
+<div>
+  Podanaj imie klienta:
+  <input [(ngModel)]="customerName" />
+</div>
+
+<input [(ngModel)]="switchName" />
+<div [ngSwitch]="switchName">
+  <div *ngSwitchCase="'Mateusz'">Hej</div>
+  <div *ngSwitchCase="'Marcin'">Ola!</div>
+  <div *ngSwitchDefault>Dzień Dobry</div>
+</div>
+
+<div *ngFor="let user of users" (click)="wybierz(user)">
+  ID: {{ user.id }} NAME: {{ user.name }}
+</div>
+
+<img [src]="imgUrl" wsbSample />

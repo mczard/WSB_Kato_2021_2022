@@ -1,0 +1,17 @@
+<div class="user-row">
+  {{ userService.salutation }}, <span (click)="logOut()">Wyloguj</span>
+</div>
+<button routerLink="/nbp">Kalkulator NBP</button>
+<one-first-component></one-first-component>
+<wsb-counter [counter]="12"></wsb-counter><button (click)="resetCounter1()">Reset Counter 1</button>
+<wsb-counter [step]="nowaWartosc" #counter3></wsb-counter> <!-- TEN COUTER CHCEMY ZMIENIĆ -->
+<wsb-counter (multiplyFive)="handleMultiplyFive($event)" #counter2></wsb-counter><button (click)="resetCounter2()">Reset Counter 2</button>
+<div><button (click)="resetAll()">RESET ALL</button></div>
+
+<input #imie/><button (click)="przywitajSie()">Przywitaj się</button>
+
+<input [(ngModel)]="nowaWartosc" type="number"/> <button (click)="ustawWartosc()">Zmien Wartość Countera</button>
+<br/>
+
+<wsb-chat-window [userName]="'Student 1'"></wsb-chat-window>
+<wsb-chat-window [userName]="'Student 2'"></wsb-chat-window>

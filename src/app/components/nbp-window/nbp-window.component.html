@@ -1,0 +1,10 @@
+<div>
+  Kod Waluty <input [(ngModel)]="currency" required placeholder="EUR/USD/etc." />
+</div>
+<button (click)="getRates()" >Pobierz stawki</button>
+<div *ngIf="currencyRate">
+  <div>Przelicznik {{ rate }} {{ currencyRate.currency }}</div>
+  <h2>Kalkulatro Walut</h2>
+  <div>PLN <input [(ngModel)]="pln" required ></div>
+  <div>{{ currencyRate.code }} {{ (pln / rate).toFixed(2) }}</div>
+</div>

@@ -1,0 +1,10 @@
+<div class="chat-window">
+  <div>
+    <input [(ngModel)]="message" /> <button (click)="addMessage()">Dodaj</button>
+  </div>
+  <div>
+    <div *ngFor="let message of messages" [ngClass]="{ 'my-message': message.author == userName }">
+      {{ message.author }} - {{ message.text }}
+    </div>
+  </div>
+</div>
